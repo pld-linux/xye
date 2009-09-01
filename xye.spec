@@ -9,9 +9,12 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/xye/%{name}-%{version}.tar.gz
 # Source0-md5:	ed03194c9e37c8bd805b9348a2caa7c3
 Source1:	%{name}.desktop
+Patch0:		%{name}-useless_files.patch
 URL:		http://xye.sourceforge.net/
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_ttf-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,8 +40,12 @@ równocześnie pułapek oraz potworów.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
@@ -49,7 +56,6 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -rf $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install xye.ico $RPM_BUILD_ROOT%{_pixmapsdir}
 
