@@ -9,7 +9,6 @@ Source0:	http://dl.sourceforge.net/xye/%{name}-%{version}.tar.gz
 # Source0-md5:	ed03194c9e37c8bd805b9348a2caa7c3
 Source1:	%{name}.desktop
 URL:		http://xye.sourceforge.net/
-BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_ttf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,6 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
 %{__rm} -rf $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
 install -d $RPM_BUILD_ROOT%{_desktopdir}
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README GAMEINTRO.txt
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.ico
