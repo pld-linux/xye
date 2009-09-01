@@ -1,5 +1,6 @@
 Summary:	Xye is a puzzle game
 Summary(hu.UTF-8):	Xye egy kirakó játék
+Summary(pl.UTF-8):	Gra logiczna Xye
 Name:		xye
 Version:	0.9.1
 Release:	0.1
@@ -20,11 +21,19 @@ is, of course, not as easy as it sounds, Xye must solve all sorts of
 puzzles while at the same time avoiding all sorts of traps and beasts.
 
 %description -l hu.UTF-8
-Xye egy kirakó játék, amelynek a célja, hogy segíts a zöld körben
-látható karakternek az összes gyémántot összegyűjteni a szobában. Ez,
-természetesen, nem olyan egyszerű, ahogy első hallásra tűnik, Xye-ben
-mindenféle kirakót kell megoldani, miközben az idő és mindenféle
-csapdák és szörnyek ellened dolgoznak.
+Xye egy kirakó játék, amelynek a célja, hogy segíts a zöld
+körben látható karakternek az összes gyémántot összegyűjteni a
+szobában. Ez, természetesen, nem olyan egyszerű, ahogy első
+hallásra tűnik, Xye-ben mindenféle kirakót kell megoldani,
+miközben az idő és mindenféle csapdák és szörnyek ellened
+dolgoznak.
+
+%description -l pl.UTF-8
+Xye to gra logiczna, w której celem jest pomaganie bohaterowi
+wyglądającemu jak zielone kółko w zebraniu wszystkich kamieni w
+pomieszczeniu. Nie jest to tak proste, jak się wydaje. Xye musi
+rozwiązywać zagadki logiczne różnego typu, unikając
+równocześnie pułapek oraz potworów.
 
 %prep
 %setup -q
