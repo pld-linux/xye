@@ -11,6 +11,7 @@ Source0:	http://dl.sourceforge.net/xye/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-useless_files.patch
 URL:		http://xye.sourceforge.net/
+BuildRequires:	SDL-devel >= 1.2.7
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
