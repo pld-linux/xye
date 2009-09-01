@@ -1,9 +1,10 @@
 [Desktop Entry]
 Name=Xye
 Comment=Puzzle Game
+Comment[pl]=Gra logiczna
 Exec=xye
 Icon=xye
 Terminal=false
 Type=Application
-Categories=Game;
-
+Categories=Game;LogicGame;
+# vi: encoding=utf-8
