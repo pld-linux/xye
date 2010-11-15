@@ -2,12 +2,12 @@ Summary:	Xye is a puzzle game
 Summary(hu.UTF-8):	Xye egy kirakó játék
 Summary(pl.UTF-8):	Gra logiczna Xye
 Name:		xye
-Version:	0.9.1
+Version:	0.9.2
 Release:	1
 License:	PNG/ZLIB
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/xye/%{name}-%{version}.tar.gz
-# Source0-md5:	ed03194c9e37c8bd805b9348a2caa7c3
+Source0:	http://downloads.sourceforge.net/xye/%{name}-%{version}.tar.gz
+# Source0-md5:	d77a74f4fb7f998e655ec5df38c08c11
 Source1:	%{name}.desktop
 Patch0:		%{name}-useless_files.patch
 URL:		http://xye.sourceforge.net/
@@ -17,6 +17,7 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
+BuildRequires:	svg2png
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,19 +27,18 @@ is, of course, not as easy as it sounds, Xye must solve all sorts of
 puzzles while at the same time avoiding all sorts of traps and beasts.
 
 %description -l hu.UTF-8
-Xye egy kirakó játék, amelynek a célja, hogy segíts a zöld
-körben látható karakternek az összes gyémántot összegyűjteni a
-szobában. Ez, természetesen, nem olyan egyszerű, ahogy első
-hallásra tűnik, Xye-ben mindenféle kirakót kell megoldani,
-miközben az idő és mindenféle csapdák és szörnyek ellened
-dolgoznak.
+Xye egy kirakó játék, amelynek a célja, hogy segíts a zöld körben
+látható karakternek az összes gyémántot összegyűjteni a szobában. Ez,
+természetesen, nem olyan egyszerű, ahogy első hallásra tűnik, Xye-ben
+mindenféle kirakót kell megoldani, miközben az idő és mindenféle
+csapdák és szörnyek ellened dolgoznak.
 
 %description -l pl.UTF-8
 Xye to gra logiczna, w której celem jest pomaganie bohaterowi
 wyglądającemu jak zielone kółko w zebraniu wszystkich kamieni w
 pomieszczeniu. Nie jest to tak proste, jak się wydaje. Xye musi
-rozwiązywać zagadki logiczne różnego typu, unikając
-równocześnie pułapek oraz potworów.
+rozwiązywać zagadki logiczne różnego typu, unikając równocześnie
+pułapek oraz potworów.
 
 %prep
 %setup -q
@@ -58,8 +58,10 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+svg2png xye.svg xye.png
+
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install xye.ico $RPM_BUILD_ROOT%{_pixmapsdir}
+install xye.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -70,4 +72,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
-%{_pixmapsdir}/%{name}.ico
+%{_pixmapsdir}/%{name}.png
