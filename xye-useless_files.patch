@@ -1,17 +1,17 @@
---- xye-0.9.1/Makefile.am~	2009-08-31 03:19:26.000000000 +0200
-+++ xye-0.9.1/Makefile.am	2009-09-01 09:36:16.000000000 +0200
+--- xye-0.9.2/Makefile.am~	2010-11-13 17:41:06.000000000 +0100
++++ xye-0.9.2/Makefile.am	2010-11-15 09:53:19.703247079 +0100
 @@ -7,8 +7,6 @@
  xye_LDFLAGS = 
  
  
--docedir = $(docdir)
+-docedir = $(datadir)/@PACKAGE@
 -doce_DATA = README GAMEINTRO.txt xye.svg NEWS COPYING AUTHORS INSTALL
  
  levelsdir= $(datadir)/@PACKAGE@/levels
  levels_DATA = levels/5levels.xye \
-@@ -82,7 +80,7 @@
- src/command.h \
- src/window.cpp
+@@ -88,7 +86,7 @@
+ src/skins.cpp \
+ src/skins.h
  
 -EXTRA_DIST = ${EXTRA_DIST1} ${xye_SOURCES} ${res_DATA} ${levels_DATA} ${doce_DATA}
 +EXTRA_DIST = ${EXTRA_DIST1} ${xye_SOURCES} ${res_DATA} ${levels_DATA}
