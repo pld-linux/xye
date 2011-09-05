@@ -2,12 +2,12 @@ Summary:	Xye is a puzzle game
 Summary(hu.UTF-8):	Xye egy kirakó játék
 Summary(pl.UTF-8):	Gra logiczna Xye
 Name:		xye
-Version:	0.9.3
+Version:	0.10.0
 Release:	1
 License:	PNG/ZLIB
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/xye/%{name}-%{version}.tar.gz
-# Source0-md5:	bd0d14b5986accaafca5639f9e6511e9
+# Source0-md5:	57c8b2b5b4794dddf9c6ec1c4059660d
 Source1:	%{name}.desktop
 Patch0:		%{name}-useless_files.patch
 URL:		http://xye.sourceforge.net/
